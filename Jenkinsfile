@@ -6,7 +6,4 @@ node("launchpad-maven") {
   stage("Build") {
     sh "mvn fabric8:deploy -Popenshift -DskipTests"
   }
-  stage("Publish to Nexus") {
-    sh "mvn deploy -DskipTests=true -DaltDeploymentRepository=nexus::default::http://nexus-ocp-workshop.apps.f4c7.openshift.opentlc.com/content/repositories/releases/"
-  }
 }
